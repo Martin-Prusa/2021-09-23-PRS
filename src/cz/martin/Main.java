@@ -1,5 +1,7 @@
 package cz.martin;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -40,7 +42,9 @@ public class Main {
         
         String[] kurzyArray = kurzy.split("\n");
         for (String kurz : kurzyArray) {
-            
+            String[] kurzInfo = kurz.split("\\|");
+            kurzInfo[4] = kurzInfo[4].replaceAll(",", ".");
+            System.out.println(kurzInfo[3] +" - "+(1/Float.parseFloat(kurzInfo[4])));
         }
     }
 }
